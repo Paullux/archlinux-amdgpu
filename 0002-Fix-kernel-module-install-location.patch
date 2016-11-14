@@ -15,7 +15,7 @@ index d1a5e1d..0e03f08 100644
  PACKAGE_VERSION="16.40-348864"
  BUILT_MODULE_NAME[0]="amdgpu"
  BUILT_MODULE_LOCATION[0]="amd/amdgpu"
--DEST_MODULE_LOCATION[0]="/extra"
+-DEST_MODULE_LOCATION[0]="/extramodules"
 +DEST_MODULE_LOCATION[0]="/kernel/drivers/gpu/drm/amd/amdgpu"
  AUTOINSTALL="yes"
  PRE_BUILD="pre-build.sh $kernelver"
