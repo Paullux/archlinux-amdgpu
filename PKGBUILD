@@ -50,7 +50,7 @@ sha256sums=(59d6b1d975164ff45f6e6be5af6bcc061bf9ef6378ac5757bdb4e67840a706b0
 
 package_lib32-amdgpu-pro () {
 	pkgdesc="Meta package to install amdgpu Pro components."
-	depends=('lib32-amdgpu-pro-dkms=16.40.348864-2' 'lib32-libdrm-amdgpu-pro-utils=16.40.348864-2' 'lib32-libgbm1-amdgpu-pro=16.40.348864-2' 'lib32-libgl1-amdgpu-pro-appprofiles=16.40.348864-2' 'lib32-libgl1-amdgpu-pro-glx=16.40.348864-2' 'lib32-libgl1-amdgpu-pro-ext=16.40.348864-2' 'lib32-libgl1-amdgpu-pro-dri=16.40.348864-2' 'lib32-libgles2-amdgpu-pro=16.40.348864-2' 'lib32-vulkan-amdgpu-pro=16.40.348864-2' 'lib32-libvdpau-amdgpu-pro=16.40.348864-2' 'lib32-libopencl1-amdgpu-pro=16.40.348864-2' 'lib32-clinfo-amdgpu-pro=16.40.348864-2' 'lib32-opencl-amdgpu-pro-icd=16.40.348864-2' 'lib32-xserver-xorg-video-glamoregl-amdgpu-pro=16.40.348864-2' 'lib32-xserver-xorg-video-amdgpu-pro=16.40.348864-2')
+	depends=('amdgpu-pro-dkms=16.40.348864-2' 'lib32-libdrm-amdgpu-pro-utils=16.40.348864-2' 'lib32-libgbm1-amdgpu-pro=16.40.348864-2' 'libgl1-amdgpu-pro-appprofiles=16.40.348864-2' 'lib32-libgl1-amdgpu-pro-glx=16.40.348864-2' 'lib32-libgl1-amdgpu-pro-ext=16.40.348864-2' 'lib32-libgl1-amdgpu-pro-dri=16.40.348864-2' 'lib32-libgles2-amdgpu-pro=16.40.348864-2' 'lib32-vulkan-amdgpu-pro=16.40.348864-2' 'lib32-libvdpau-amdgpu-pro=16.40.348864-2' 'lib32-libopencl1-amdgpu-pro=16.40.348864-2' 'lib32-clinfo-amdgpu-pro=16.40.348864-2' 'lib32-opencl-amdgpu-pro-icd=16.40.348864-2' 'lib32-xserver-xorg-video-glamoregl-amdgpu-pro=16.40.348864-2' 'lib32-xserver-xorg-video-amdgpu-pro=16.40.348864-2')
 	arch=('x86_64')
 
 	rm -Rf "${srcdir}"/amdgpu-pro_16.40-348864_i386
