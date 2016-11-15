@@ -1,3 +1,4 @@
+#!/bin/sh
 yaourt -Rdd \
 amdgpu-pro \
 amdgpu-pro-dkms \
