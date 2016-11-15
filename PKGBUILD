@@ -125,7 +125,7 @@ package_amdgpu-pro-dkms () {
 
 package_amdgpu-pro-lib32 () {
 	pkgdesc="Meta package to support i386 runtime on amd64 architecture"
-	depends=('libdrm-amdgpu-pro-amdgpu1:i386' 'libgbm1-amdgpu-pro:i386' 'libgl1-amdgpu-pro-glx:i386' 'libgl1-amdgpu-pro-dri:i386' 'libgles2-amdgpu-pro:i386' 'vulkan-amdgpu-pro:i386' 'libvdpau-amdgpu-pro:i386' 'libopencl1-amdgpu-pro:i386' 'opencl-amdgpu-pro-icd:i386')
+	depends=('lib32-libdrm-amdgpu-pro-amdgpu1' 'lib32-libgbm1-amdgpu-pro' 'lib32-libgl1-amdgpu-pro-glx' 'lib32-libgl1-amdgpu-pro-dri' 'lib32-libgles2-amdgpu-pro' 'lib32-vulkan-amdgpu-pro' 'lib32-libvdpau-amdgpu-pro' 'lib32-libopencl1-amdgpu-pro' 'lib32-opencl-amdgpu-pro-icd')
 	arch=('x86_64')
 
 	rm -Rf "${srcdir}"/amdgpu-pro-lib32_16.40-348864_amd64
@@ -183,7 +183,7 @@ package_clinfo-amdgpu-pro () {
 
 package_lib32-gst-omx-amdgpu-pro () {
 	pkgdesc="GStreamer OpenMAX plugins"
-	depends=('lib32-libglib2.0-0>=2.37.3' 'lib32-libgstreamer-plugins-base1.0-0>=1.6.0' 'lib32-libgstreamer1.0-0>=1.0.0' 'lib32-libomxil-bellagio0')
+	depends=('lib32-glib2>=2.37.3' 'lib32-gst-plugins-base>=1.6.0' 'lib32-gstreamer>=1.0.0' 'lib32-libomxil-bellagio')
 	arch=('x86_64')
 
 	rm -Rf "${srcdir}"/gst-omx-amdgpu-pro_1.0.0.1-348864_i386
@@ -203,7 +203,7 @@ package_lib32-gst-omx-amdgpu-pro () {
 
 package_gst-omx-amdgpu-pro () {
 	pkgdesc="GStreamer OpenMAX plugins"
-	depends=('libglib2.0-0>=2.37.3' 'libgstreamer-plugins-base1.0-0>=1.6.0' 'libgstreamer1.0-0>=1.0.0' 'libomxil-bellagio0')
+	depends=('glib2>=2.37.3' 'gst-plugins-base>=1.6.0' 'gstreamer>=1.0.0' 'libomxil-bellagio')
 	arch=('x86_64')
 
 	rm -Rf "${srcdir}"/gst-omx-amdgpu-pro_1.0.0.1-348864_amd64
@@ -822,7 +822,7 @@ package_lib32-libopencl1-amdgpu-pro () {
 
 package_lib32-libvdpau-amdgpu-pro () {
 	pkgdesc="AMDGPU Pro VDPAU driver"
-	depends=('lib32-libdrm-amdgpu-pro-amdgpu1=16.40.348864-2' 'lib32-libdrm2-amdgpu-pro=16.40.348864-2' 'lib32-openssl>=1.0.0' 'lib32-libtinfo5>=6' 'lib32-libxcb>=1.8' 'lib32-libxcb' 'lib32-zlib>=1.2.0' 'lib32-libvdpau1>=1.1')
+	depends=('lib32-libdrm-amdgpu-pro-amdgpu1=16.40.348864-2' 'lib32-libdrm2-amdgpu-pro=16.40.348864-2' 'lib32-openssl>=1.0.0' 'lib32-libtinfo>=6' 'lib32-libxcb>=1.8' 'lib32-libxcb' 'lib32-zlib>=1.2.0' 'lib32-libvdpau>=1.1')
 	arch=('x86_64')
 
 	rm -Rf "${srcdir}"/libvdpau-amdgpu-pro_1:11.2.2-348864_i386
@@ -842,7 +842,7 @@ package_lib32-libvdpau-amdgpu-pro () {
 
 package_libvdpau-amdgpu-pro () {
 	pkgdesc="AMDGPU Pro VDPAU driver"
-	depends=('libdrm-amdgpu-pro-amdgpu1=16.40.348864-2' 'libdrm2-amdgpu-pro=16.40.348864-2' 'openssl>=1.0.0' 'libtinfo5>=6' 'libxcb>=1.8' 'libxcb' 'zlib>=1.2.0' 'libvdpau1>=1.1')
+	depends=('libdrm-amdgpu-pro-amdgpu1=16.40.348864-2' 'libdrm2-amdgpu-pro=16.40.348864-2' 'openssl>=1.0.0' 'libtinfo>=6' 'libxcb>=1.8' 'libxcb' 'zlib>=1.2.0' 'libvdpau>=1.1')
 	arch=('x86_64')
 
 	rm -Rf "${srcdir}"/libvdpau-amdgpu-pro_1:11.2.2-348864_amd64
@@ -861,7 +861,7 @@ package_libvdpau-amdgpu-pro () {
 
 package_lib32-mesa-amdgpu-pro-omx-drivers () {
 	pkgdesc="Mesa OpenMAX video drivers"
-	depends=('lib32-libdrm-amdgpu-pro-amdgpu1=16.40.348864-2' 'lib32-libdrm2-amdgpu-pro=16.40.348864-2' 'lib32-libomxil-bellagio0' 'lib32-openssl>=1.0.0' 'lib32-libtinfo5>=6' 'lib32-libx11' 'lib32-libxcb>=1.8' 'lib32-libxcb' 'lib32-zlib>=1.2.0')
+	depends=('lib32-libdrm-amdgpu-pro-amdgpu1=16.40.348864-2' 'lib32-libdrm2-amdgpu-pro=16.40.348864-2' 'lib32-libomxil-bellagio' 'lib32-openssl>=1.0.0' 'lib32-libtinfo>=6' 'lib32-libx11' 'lib32-libxcb>=1.8' 'lib32-libxcb' 'lib32-zlib>=1.2.0')
 	arch=('x86_64')
 
 	rm -Rf "${srcdir}"/mesa-amdgpu-pro-omx-drivers_1:11.2.2-348864_i386
@@ -881,7 +881,7 @@ package_lib32-mesa-amdgpu-pro-omx-drivers () {
 
 package_mesa-amdgpu-pro-omx-drivers () {
 	pkgdesc="Mesa OpenMAX video drivers"
-	depends=('libdrm-amdgpu-pro-amdgpu1=16.40.348864-2' 'libdrm2-amdgpu-pro=16.40.348864-2' 'libomxil-bellagio0' 'openssl>=1.0.0' 'libtinfo5>=6' 'libx11' 'libxcb>=1.8' 'libxcb' 'zlib>=1.2.0')
+	depends=('libdrm-amdgpu-pro-amdgpu1=16.40.348864-2' 'libdrm2-amdgpu-pro=16.40.348864-2' 'libomxil-bellagio' 'openssl>=1.0.0' 'libtinfo>=6' 'libx11' 'libxcb>=1.8' 'libxcb' 'zlib>=1.2.0')
 	arch=('x86_64')
 
 	rm -Rf "${srcdir}"/mesa-amdgpu-pro-omx-drivers_1:11.2.2-348864_amd64
@@ -978,7 +978,7 @@ package_lib32-vulkan-amdgpu-pro () {
 
 package_lib32-xserver-xorg-video-amdgpu-pro () {
 	pkgdesc="X.Org X server -- AMD/ATI Radeon display driver"
-	depends=('lib32-libdrm-amdgpu-pro-amdgpu1=16.40.348864-2' 'lib32-libgbm1-amdgpu-pro=16.40.348864-2' 'lib32-libsystemd>=183')
+	depends=('lib32-libdrm-amdgpu-pro-amdgpu1=16.40.348864-2' 'lib32-libgbm1-amdgpu-pro=16.40.348864-2' 'lib32-systemd>=183')
 	arch=('x86_64')
 
 	rm -Rf "${srcdir}"/xserver-xorg-video-amdgpu-pro_1:1.1.99-348864_i386
@@ -998,7 +998,7 @@ package_lib32-xserver-xorg-video-amdgpu-pro () {
 
 package_xserver-xorg-video-amdgpu-pro () {
 	pkgdesc="X.Org X server -- AMD/ATI Radeon display driver"
-	depends=('libdrm-amdgpu-pro-amdgpu1=16.40.348864-2' 'libgbm1-amdgpu-pro=16.40.348864-2' 'libsystemd>=183')
+	depends=('libdrm-amdgpu-pro-amdgpu1=16.40.348864-2' 'libgbm1-amdgpu-pro=16.40.348864-2' 'systemd>=183')
 	arch=('x86_64')
 
 	rm -Rf "${srcdir}"/xserver-xorg-video-amdgpu-pro_1:1.1.99-348864_amd64
@@ -1063,7 +1063,7 @@ package_xserver-xorg-video-glamoregl-amdgpu-pro () {
 
 package_lib32-xserver-xorg-video-modesetting-amdgpu-pro () {
 	pkgdesc="XServer modules for amdgpu-pro This package contains modesetting_drv.so"
-	depends=('lib32-libsystemd>=183')
+	depends=('lib32-systemd>=183')
 	arch=('x86_64')
 
 	rm -Rf "${srcdir}"/xserver-xorg-video-modesetting-amdgpu-pro_1.18.3-348864_i386
@@ -1083,7 +1083,7 @@ package_lib32-xserver-xorg-video-modesetting-amdgpu-pro () {
 
 package_xserver-xorg-video-modesetting-amdgpu-pro () {
 	pkgdesc="XServer modules for amdgpu-pro This package contains modesetting_drv.so"
-	depends=('libsystemd>=183')
+	depends=('systemd>=183')
 	arch=('x86_64')
 
 	rm -Rf "${srcdir}"/xserver-xorg-video-modesetting-amdgpu-pro_1.18.3-348864_amd64
