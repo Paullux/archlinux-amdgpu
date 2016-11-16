@@ -392,6 +392,9 @@ package_libdrm2-amdgpu-pro () {
 		mv "${pkgdir}"/usr/lib/x86_64-linux-gnu/* "${pkgdir}"/usr/lib
 		rmdir "${pkgdir}"/usr/lib/x86_64-linux-gnu
 	fi
+	mkdir -p "${pkgdir}"/usr/lib
+	mv "${pkgdir}"/lib/* "${pkgdir}"/usr/lib
+	rmdir "${pkgdir}"/lib
 }
 
 
@@ -411,6 +414,8 @@ package_lib32-libdrm2-amdgpu-pro () {
 		mv "${pkgdir}"/usr/lib/i386-linux-gnu/* "${pkgdir}"/usr/lib32
 		rmdir "${pkgdir}"/usr/lib/i386-linux-gnu
 	fi
+
+	rm -Rf "${pkgdir}"/lib
 	rm -Rf ${pkgdir}/usr/share/doc ${pkgdir}/usr/include
 }
 
@@ -432,8 +437,11 @@ package_libegl1-amdgpu-pro () {
 		rmdir "${pkgdir}"/usr/lib/x86_64-linux-gnu
 	fi
 
+	conflicts=('mesa-libgl')
 	mkdir -p "${pkgdir}"/usr/lib
-	cp ${pkgdir}/opt/amdgpu-pro/lib/x86_64-linux-gnu/libEGL* ${pkgdir}/usr/lib
+	mv ${pkgdir}/opt/amdgpu-pro/lib/x86_64-linux-gnu/* ${pkgdir}/opt/amdgpu-pro/lib
+	rmdir "${pkgdir}"/opt/amdgpu-pro/lib/x86_64-linux-gnu
+	
 
 }
 
@@ -454,10 +462,11 @@ package_lib32-libegl1-amdgpu-pro () {
 		mv "${pkgdir}"/usr/lib/i386-linux-gnu/* "${pkgdir}"/usr/lib32
 		rmdir "${pkgdir}"/usr/lib/i386-linux-gnu
 	fi
-
-	mkdir -p "${pkgdir}"/usr/lib32
-	cp ${pkgdir}/opt/amdgpu-pro/lib/i386-linux-gnu/libEGL* ${pkgdir}/usr/lib32
-
+	
+	conflicts=('lib32-mesa-libgl')
+	mkdir -p "${pkgdir}"/opt/amdgpu-pro/lib32
+	mv ${pkgdir}/opt/amdgpu-pro/lib/i386-linux-gnu/libEGL* ${pkgdir}/opt/amdgpu-pro/lib32/
+	rmdir "${pkgdir}"/opt/amdgpu-pro/lib/i386-linux-gnu
 	rm -Rf ${pkgdir}/usr/share/doc ${pkgdir}/usr/include
 }
 
@@ -672,10 +681,10 @@ package_lib32-libgl1-amdgpu-pro-glx () {
 		mv "${pkgdir}"/usr/lib/i386-linux-gnu/* "${pkgdir}"/usr/lib32
 		rmdir "${pkgdir}"/usr/lib/i386-linux-gnu
 	fi
-
-	mkdir -p "${pkgdir}"/usr/lib32
-	cp ${pkgdir}/opt/amdgpu-pro/lib/i386-linux-gnu/libGL* ${pkgdir}/usr/lib32
-
+	conflicts=('lib32-mesa-libgl')
+	mkdir -p "${pkgdir}"/opt/amdgpu-pro/lib32
+	mv ${pkgdir}/opt/amdgpu-pro/lib/i386-linux-gnu/libGL* ${pkgdir}/opt/amdgpu-pro/lib32
+	rmdir "${pkgdir}"/opt/amdgpu-pro/lib/i386-linux-gnu
 	rm -Rf ${pkgdir}/usr/share/doc ${pkgdir}/usr/include
 }
 
@@ -697,8 +706,10 @@ package_libgl1-amdgpu-pro-glx () {
 		rmdir "${pkgdir}"/usr/lib/x86_64-linux-gnu
 	fi
 
+	conflicts=('mesa-libgl')
 	mkdir -p "${pkgdir}"/usr/lib
-	cp ${pkgdir}/opt/amdgpu-pro/lib/x86_64-linux-gnu/libGL* ${pkgdir}/usr/lib
+	mv ${pkgdir}/opt/amdgpu-pro/lib/x86_64-linux-gnu/libGL* ${pkgdir}/opt/amdgpu-pro/lib
+	rmdir "${pkgdir}"/opt/amdgpu-pro/lib/x86_64-linux-gnu
 
 }
 
@@ -1017,7 +1028,6 @@ package_xserver-xorg-video-amdgpu-pro () {
 	mkdir -p ${pkgdir}/usr/lib/x86_64-linux-gnu
 	# This is needed because libglx.so has a hardcoded DRI_DRIVER_PATH
 	ln -s /usr/lib/dri ${pkgdir}/usr/lib/x86_64-linux-gnu/dri
-	cp -r ${pkgdir}/opt/amdgpu-pro/lib/xorg/ ${pkgdir}/usr/lib/xorg
 
 }
 
