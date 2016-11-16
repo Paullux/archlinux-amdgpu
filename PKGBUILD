@@ -925,6 +925,7 @@ package_lib32-opencl-amdgpu-pro-icd () {
 		mv "${pkgdir}"/usr/lib/i386-linux-gnu/* "${pkgdir}"/usr/lib32
 		rmdir "${pkgdir}"/usr/lib/i386-linux-gnu
 	fi
+	conflicts=('lib32-ocl-icd')
 	rm -Rf ${pkgdir}/usr/share/doc ${pkgdir}/usr/include
 }
 
@@ -964,6 +965,7 @@ package_vulkan-amdgpu-pro () {
 		mv "${pkgdir}"/usr/lib/x86_64-linux-gnu/* "${pkgdir}"/usr/lib
 		rmdir "${pkgdir}"/usr/lib/x86_64-linux-gnu
 	fi
+	conflicts=('ocl-icd')
 }
 
 
