@@ -437,6 +437,7 @@ package_libegl1-amdgpu-pro () {
 		rmdir "${pkgdir}"/usr/lib/x86_64-linux-gnu
 	fi
 
+	provides=('mesa-libgl')
 	conflicts=('mesa-libgl')
 	mkdir -p "${pkgdir}"/usr/lib
 	mv ${pkgdir}/opt/amdgpu-pro/lib/x86_64-linux-gnu/* ${pkgdir}/opt/amdgpu-pro/lib
@@ -463,6 +464,7 @@ package_lib32-libegl1-amdgpu-pro () {
 		rmdir "${pkgdir}"/usr/lib/i386-linux-gnu
 	fi
 	
+	provides=('lib32-mesa-libgl')
 	conflicts=('lib32-mesa-libgl')
 	mkdir -p "${pkgdir}"/opt/amdgpu-pro/lib32
 	mv ${pkgdir}/opt/amdgpu-pro/lib/i386-linux-gnu/libEGL* ${pkgdir}/opt/amdgpu-pro/lib32/
@@ -925,6 +927,8 @@ package_lib32-opencl-amdgpu-pro-icd () {
 		mv "${pkgdir}"/usr/lib/i386-linux-gnu/* "${pkgdir}"/usr/lib32
 		rmdir "${pkgdir}"/usr/lib/i386-linux-gnu
 	fi
+	
+	provides=('lib32-ocl-icd')
 	conflicts=('lib32-ocl-icd')
 	rm -Rf ${pkgdir}/usr/share/doc ${pkgdir}/usr/include
 }
@@ -946,6 +950,8 @@ package_opencl-amdgpu-pro-icd () {
 		mv "${pkgdir}"/usr/lib/x86_64-linux-gnu/* "${pkgdir}"/usr/lib
 		rmdir "${pkgdir}"/usr/lib/x86_64-linux-gnu
 	fi
+	
+	provides=('ocl-icd')
 	conflicts=('ocl-icd')
 }
 
