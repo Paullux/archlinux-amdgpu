@@ -809,6 +809,9 @@ package_lib32-libgl1-amdgpu-pro-ext () {
 		mv "${pkgdir}"/opt/amdgpu-pro/lib/i386-linux-gnu/* "${pkgdir}"/opt/amdgpu-pro/lib32
 		rmdir "${pkgdir}"/opt/amdgpu-pro/lib/i386-linux-gnu
 	fi
+	
+	mv "${pkgdir}"/opt/amdgpu-pro/lib/xorg "${pkgdir}"/opt/amdgpu-pro/lib32/xorg
+	rm "${pkgdir}"/opt/amdgpu-pro/lib/xorg
 	rm -Rf ${pkgdir}/usr/share/doc ${pkgdir}/usr/include
 }
 
@@ -1175,6 +1178,7 @@ package_opencl-amdgpu-pro-icd () {
 	
 	provides=('libcl' 'opencl-icd-loader')
 	conflicts=('libcl' 'opencl-icd-loader')
+
 }
 
 
@@ -1254,6 +1258,8 @@ package_lib32-xserver-xorg-video-amdgpu-pro () {
 		rmdir "${pkgdir}"/opt/amdgpu-pro/lib/i386-linux-gnu
 	fi
 	
+	mv "${pkgdir}"/opt/amdgpu-pro/lib/xorg "${pkgdir}"/opt/amdgpu-pro/lib32/xorg
+	rm "${pkgdir}"/opt/amdgpu-pro/lib/xorg
 	rm -Rf ${pkgdir}/usr/share/doc ${pkgdir}/usr/include
 }
 
@@ -1312,6 +1318,8 @@ package_lib32-xserver-xorg-video-glamoregl-amdgpu-pro () {
 		rmdir "${pkgdir}"/opt/amdgpu-pro/lib/i386-linux-gnu
 	fi
 	
+	mv "${pkgdir}"/opt/amdgpu-pro/lib/xorg "${pkgdir}"/opt/amdgpu-pro/lib32/xorg
+	rm "${pkgdir}"/opt/amdgpu-pro/lib/xorg
 	rm -Rf ${pkgdir}/usr/share/doc ${pkgdir}/usr/include
 }
 
@@ -1365,6 +1373,8 @@ package_lib32-xserver-xorg-video-modesetting-amdgpu-pro () {
 		rmdir "${pkgdir}"/opt/amdgpu-pro/lib/i386-linux-gnu
 	fi
 	
+	mv "${pkgdir}"/opt/amdgpu-pro/lib/xorg "${pkgdir}"/opt/amdgpu-pro/lib32/xorg
+	rm "${pkgdir}"/opt/amdgpu-pro/lib/xorg
 	rm -Rf ${pkgdir}/usr/share/doc ${pkgdir}/usr/include
 }
 
