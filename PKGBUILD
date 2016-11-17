@@ -1173,10 +1173,8 @@ package_opencl-amdgpu-pro-icd () {
 		rmdir "${pkgdir}"/opt/amdgpu-pro/lib/x86_64-linux-gnu
 	fi
 	
-	provides=('libcl')
-	conflicts=('libcl')
-	provides=('opencl-icd-loader')
-	conflicts=('opencl-icd-loader')
+	provides=('libcl' 'opencl-icd-loader')
+	conflicts=('libcl' 'opencl-icd-loader')
 }
 
 
