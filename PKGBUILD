@@ -683,7 +683,7 @@ package_lib32-libgl1-amdgpu-pro-glx () {
 		mv "${pkgdir}"/usr/lib/i386-linux-gnu/* "${pkgdir}"/usr/lib32
 		rmdir "${pkgdir}"/usr/lib/i386-linux-gnu
 	fi
-	conflicts=('lib32-mesa-libgl')
+	
 	mkdir -p "${pkgdir}"/opt/amdgpu-pro/lib32
 	mv ${pkgdir}/opt/amdgpu-pro/lib/i386-linux-gnu/libGL* ${pkgdir}/opt/amdgpu-pro/lib32
 	rmdir "${pkgdir}"/opt/amdgpu-pro/lib/i386-linux-gnu
@@ -708,7 +708,6 @@ package_libgl1-amdgpu-pro-glx () {
 		rmdir "${pkgdir}"/usr/lib/x86_64-linux-gnu
 	fi
 
-	conflicts=('mesa-libgl')
 	mkdir -p "${pkgdir}"/usr/lib
 	mv ${pkgdir}/opt/amdgpu-pro/lib/x86_64-linux-gnu/libGL* ${pkgdir}/opt/amdgpu-pro/lib
 	rmdir "${pkgdir}"/opt/amdgpu-pro/lib/x86_64-linux-gnu
