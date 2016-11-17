@@ -437,8 +437,8 @@ package_libegl1-amdgpu-pro () {
 		rmdir "${pkgdir}"/usr/lib/x86_64-linux-gnu
 	fi
 
-	provides=('mesa-libgl')
-	conflicts=('mesa-libgl')
+	provides=('libgl')
+	conflicts=('libgl')
 	mkdir -p "${pkgdir}"/usr/lib
 	mv ${pkgdir}/opt/amdgpu-pro/lib/x86_64-linux-gnu/* ${pkgdir}/opt/amdgpu-pro/lib
 	rmdir "${pkgdir}"/opt/amdgpu-pro/lib/x86_64-linux-gnu
@@ -464,8 +464,8 @@ package_lib32-libegl1-amdgpu-pro () {
 		rmdir "${pkgdir}"/usr/lib/i386-linux-gnu
 	fi
 	
-	provides=('lib32-mesa-libgl')
-	conflicts=('lib32-mesa-libgl')
+	provides=('lib32-libgl')
+	conflicts=('lib32-libgl')
 	mkdir -p "${pkgdir}"/opt/amdgpu-pro/lib32
 	mv ${pkgdir}/opt/amdgpu-pro/lib/i386-linux-gnu/libEGL* ${pkgdir}/opt/amdgpu-pro/lib32/
 	rmdir "${pkgdir}"/opt/amdgpu-pro/lib/i386-linux-gnu
