@@ -927,8 +927,8 @@ package_lib32-opencl-amdgpu-pro-icd () {
 		rmdir "${pkgdir}"/usr/lib/i386-linux-gnu
 	fi
 	
-	provides=('lib32-ocl-icd')
-	conflicts=('lib32-ocl-icd')
+	provides=('lib32-libcl')
+	conflicts=('lib32-libcl')
 	rm -Rf ${pkgdir}/usr/share/doc ${pkgdir}/usr/include
 }
 
@@ -950,8 +950,10 @@ package_opencl-amdgpu-pro-icd () {
 		rmdir "${pkgdir}"/usr/lib/x86_64-linux-gnu
 	fi
 	
-	provides=('ocl-icd')
-	conflicts=('ocl-icd')
+	provides=('libcl')
+	conflicts=('libcl')
+	provides=('opencl-icd-loader')
+	conflicts=('opencl-icd-loader')
 }
 
 
