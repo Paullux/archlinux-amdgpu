@@ -815,7 +815,8 @@ package_lib32-libgl1-amdgpu-pro-ext () {
 		rmdir "${pkgdir}"/opt/amdgpu-pro/lib/i386-linux-gnu
 	fi
 	
-	mv "${pkgdir}"/opt/amdgpu-pro/lib/xorg "${pkgdir}"/opt/amdgpu-pro/lib32/xorg
+	mkdir -p "${pkgdir}"/opt/amdgpu-pro/lib32/xorg
+	mv "${pkgdir}"/opt/amdgpu-pro/lib/xorg/* "${pkgdir}"/opt/amdgpu-pro/lib32/xorg
 	rm "${pkgdir}"/opt/amdgpu-pro/lib/xorg
 	rm -Rf ${pkgdir}/usr/share/doc ${pkgdir}/usr/include
 }
@@ -1264,7 +1265,8 @@ package_lib32-xserver-xorg-video-amdgpu-pro () {
 		rmdir "${pkgdir}"/opt/amdgpu-pro/lib/i386-linux-gnu
 	fi
 	
-	mv "${pkgdir}"/opt/amdgpu-pro/lib/xorg "${pkgdir}"/opt/amdgpu-pro/lib32/xorg
+	mkdir -p "${pkgdir}"/opt/amdgpu-pro/lib32/xorg
+	mv "${pkgdir}"/opt/amdgpu-pro/lib/xorg/* "${pkgdir}"/opt/amdgpu-pro/lib32/xorg
 	rm "${pkgdir}"/opt/amdgpu-pro/lib/xorg
 	rm -Rf ${pkgdir}/usr/share ${pkgdir}/usr/include
 	rm -Rf ${pkgdir}/opt/amdgpu-pro/share/man ${pkgdir}/opt/amdgpu-pro/include
@@ -1325,7 +1327,8 @@ package_lib32-xserver-xorg-video-glamoregl-amdgpu-pro () {
 		rmdir "${pkgdir}"/opt/amdgpu-pro/lib/i386-linux-gnu
 	fi
 	
-	mv "${pkgdir}"/opt/amdgpu-pro/lib/xorg "${pkgdir}"/opt/amdgpu-pro/lib32/xorg
+	mkdir -p "${pkgdir}"/opt/amdgpu-pro/lib32/xorg
+	mv "${pkgdir}"/opt/amdgpu-pro/lib/xorg/* "${pkgdir}"/opt/amdgpu-pro/lib32/xorg
 	rm "${pkgdir}"/opt/amdgpu-pro/lib/xorg
 	rm -Rf ${pkgdir}/usr/share/doc ${pkgdir}/usr/include
 }
@@ -1380,7 +1383,8 @@ package_lib32-xserver-xorg-video-modesetting-amdgpu-pro () {
 		rmdir "${pkgdir}"/opt/amdgpu-pro/lib/i386-linux-gnu
 	fi
 	
-	mv "${pkgdir}"/opt/amdgpu-pro/lib/xorg "${pkgdir}"/opt/amdgpu-pro/lib32/xorg
+	mkdir -p "${pkgdir}"/opt/amdgpu-pro/lib32/xorg
+	mv "${pkgdir}"/opt/amdgpu-pro/lib/xorg/* "${pkgdir}"/opt/amdgpu-pro/lib32/xorg
 	rm "${pkgdir}"/opt/amdgpu-pro/lib/xorg
 	rm -Rf ${pkgdir}/usr/share/doc ${pkgdir}/usr/include
     rm -Rf ${pkgdir}/opt/amdgpu-pro/share/man ${pkgdir}/opt/amdgpu-pro/include
@@ -1412,5 +1416,4 @@ package_xserver-xorg-video-modesetting-amdgpu-pro () {
 	fi
 	
 }
-
 
